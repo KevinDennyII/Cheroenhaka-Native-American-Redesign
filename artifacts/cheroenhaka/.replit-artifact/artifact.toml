@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Cheroenhaka (Nottoway) Indian Tribe"
+version = "1.0.0"
+id = "artifacts/cheroenhaka"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 25644
+
+[services.development]
+run = "pnpm --filter @workspace/cheroenhaka run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/cheroenhaka", "run", "build" ]
+publicDir = "artifacts/cheroenhaka/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "25644"
+BASE_PATH = "/"
