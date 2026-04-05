@@ -11,24 +11,30 @@ const navItems = [
     { name: "Cattashowrock Town", path: "/about-us/cattashowrock-town" },
     { name: "Resolution & Goals", path: "/about-us/resolution-goals" },
     { name: "Tribal Shield & Heraldry", path: "/about-us/tribal-shield" },
-    { name: "Ethno-Historic Snapshot", path: "/about-us/ethno-historic-snapshot" },
     { name: "Constitution & Bylaws", path: "/about-us/constitution-bylaws" },
     { name: "Our Language", path: "/about-us/language" },
     { name: "Chief Edith Turner", path: "/about-us/edith-turner" },
     { name: "Return of Natives Pt.1", path: "/about-us/return-of-natives-1" },
     { name: "Return of Natives Pt.2", path: "/about-us/return-of-natives-2" },
     { name: "1808 Census", path: "/about-us/census-1808" },
+    { name: "Native Americans Reclaim Reservation Land", path: "/about-us/native-americans-reclaim-reservation-land" },
+    { name: "Cheroenhaka (Nottoway) Enterprises", path: "https://www.cheroenhaka-nottoway.org/wp-content/uploads/CNE-Capability-Statement-Updated.pdf", external: true },
   ]},
   { name: "Recognition", path: "/recognition", subItems: [
-    { name: "H.R.9630 Bill", path: "/recognition/hr9630" },
-    { name: "VA Senate Resolution", path: "/recognition/senate-resolution" },
+    { name: "US Congress.gov Bill Alert – H.R.9630", path: "/recognition/us-congress-bill-alert-hr9630" },
+    { name: "House Joint Resolution 171", path: "https://www.cheroenhaka-nottoway.org/wp-content/uploads/State-Recognition-Enrolled-HJ171.pdf", external: true },
+    { name: "Senate Joint Resolution 127", path: "https://www.cheroenhaka-nottoway.org/wp-content/uploads/State-Recognition-Enrolled-SJ127.pdf", external: true },
+    { name: "VA Senate Resolution", path: "/recognition/va-senate-resolution" },
     { name: "Anthropologist Letter", path: "/recognition/anthropologist-letter" },
+    { name: "Anthropologist Article", path: "/recognition/anthropologist-article" },
     { name: "Recognition Delayed", path: "/recognition/recognition-delayed" },
     { name: "Beaver Creek Support", path: "/recognition/beaver-creek-support" },
-    { name: "How to Support", path: "/recognition/how-to-support" },
+    { name: "Federal Recognition of Native American Tribes in Virginia", path: "http://www.virginiaplaces.org/nativeamerican/recognition.html", external: true },
+    { name: "How to Show Support", path: "/recognition/how-to-show-support" },
   ]},
   { name: "History", path: "/history", subItems: [
     { name: "Waskehee", path: "/history/creator-heart-speaks" },
+    { name: "Ethnohistorical Snapshot", path: "/history/ethno-historic-snapshot" },
   ]},
   { name: "Events", path: "/events", subItems: [
     { name: "Upcoming Events", path: "/events/upcoming" },
@@ -103,9 +109,15 @@ export function Layout({ children }: { children: React.ReactNode }) {
                     <ul className="absolute left-0 top-full mt-0 bg-primary border border-sidebar-border shadow-lg min-w-[220px] hidden group-hover:block z-50 rounded-b-md overflow-hidden">
                       {item.subItems.map((sub) => (
                         <li key={sub.path}>
-                          <Link href={sub.path} className="block px-4 py-3 hover:bg-secondary hover:text-secondary-foreground transition-colors font-sans text-[13px] border-b border-primary-foreground/10 last:border-0">
-                            {sub.name}
-                          </Link>
+                          {sub.external ? (
+                            <a href={sub.path} target="_blank" rel="noopener noreferrer" className="block px-4 py-3 hover:bg-secondary hover:text-secondary-foreground transition-colors font-sans text-[13px] border-b border-primary-foreground/10 last:border-0">
+                              {sub.name}
+                            </a>
+                          ) : (
+                            <Link href={sub.path} className="block px-4 py-3 hover:bg-secondary hover:text-secondary-foreground transition-colors font-sans text-[13px] border-b border-primary-foreground/10 last:border-0">
+                              {sub.name}
+                            </Link>
+                          )}
                         </li>
                       ))}
                     </ul>
@@ -127,9 +139,15 @@ export function Layout({ children }: { children: React.ReactNode }) {
                         <ul className="bg-primary/50">
                           {item.subItems.map((sub) => (
                             <li key={sub.path}>
-                              <Link href={sub.path} className="block pl-8 pr-4 py-2 text-sm hover:bg-secondary hover:text-secondary-foreground transition-colors border-b border-sidebar-border/30 last:border-0">
-                                {sub.name}
-                              </Link>
+                              {sub.external ? (
+                                <a href={sub.path} target="_blank" rel="noopener noreferrer" className="block pl-8 pr-4 py-2 text-sm hover:bg-secondary hover:text-secondary-foreground transition-colors border-b border-sidebar-border/30 last:border-0">
+                                  {sub.name}
+                                </a>
+                              ) : (
+                                <Link href={sub.path} className="block pl-8 pr-4 py-2 text-sm hover:bg-secondary hover:text-secondary-foreground transition-colors border-b border-sidebar-border/30 last:border-0">
+                                  {sub.name}
+                                </Link>
+                              )}
                             </li>
                           ))}
                         </ul>
