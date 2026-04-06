@@ -23,6 +23,34 @@ export default function GenericPage({ section, slug }: GenericPageProps) {
   
   // Custom content injection based on known pages
   const renderContent = () => {
+    if (slug === "bio") {
+      return (
+        <div className="prose prose-lg prose-slate max-w-none">
+          <h2 className="text-secondary text-center">CHIEF WALT “RED HAWK” BROWN, CHEROENHAKA (NOTTOWAY) INDIAN TRIBE</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+            <div className="md:col-span-1">
+              <img src="/images/chief-walt-brown.jpg" alt="Chief Walt Brown" className="w-full h-auto rounded-lg shadow-lg" />
+            </div>
+            <div className="md:col-span-2 space-y-4">
+              <p>Chief Walter David “Red Hawk” Brown, III is the elected Chief of the Cheroenhaka (Che-ro-en-ha-ka) Nottoway Indian Tribe of Southampton County VA and the Chairman of the Cheroenhaka (Nottoway) Indian Tribal Heritage Foundation, Inc., a 501 (c) 3 entity. He is also President & CEO of the Cheroenhaka Nottoway Enterprise (CNE) LLC which is a Tribally Owned SBA 8a Company. Chief Red Hawk is a native of Southampton County, Virginia and grew up on his family’s farm in Sunbeam Virginia, experiencing the age old “Traditions” and Culture” of the Cheroenhaka (Nottoway) Indians by farming, raising hogs, fishing, hunting, trapping and curing hides to sell with his father.</p>
+              <p>Chief Brown proudly documents his genealogy (paper trail and by oral history) to an ethno-historic “matrilineal line” of the 18th and 19th Century Cheroenhaka (Nottoway) Indians in Southampton County, Virginia. He is the 5th Foster Great Grandson of Cheroenhaka (Nottoway) Indian Tribe’s Queen, Chief Edy (Edith) Turner (1754-1838), who married William Green in 1819, both of whom were listed as Free Persons of Color (FPC) on their marriage license. Queen Edy Turner raised Chief Brown’s 4th Great Grandmother, Mary “Polly” Woodson Turner, both of whom are named on the 1808 Cheroenhaka (Nottoway) Indian Tribe’s “Special Census” conducted on the former reservation’s land of the tribe in Southampton County, Virginia. Mary Turner, aka Polly Woodson, married Parson Turner (Artis Town) and begat Patsy Turner who is Chief Brown’s 3rd Great Grandmother. Her death record of 1856 (Southampton County) lists Mary Turner as her mother.</p>
+            </div>
+          </div>
+
+          <div className="mt-8 space-y-4">
+            <p>He is a former elected official that served on the Southampton County Board of Supervisor for eight years, 2004 to 2012. Chief Brown was the first Native American ever to sit on the Board since Southampton County was annexed from Isle of Wright County in 1749. He also served on the Virginia Association of Counties Transportation Steering Committee and the Advisory Council to the Lieutenant Governor of Virginia – the Honorable Bill Bolling. In 2003, as his party’s choice, he ran, unsuccessfully, for VA State Senate, 18th Senate District. In 2004, he was elected as a 4th Congressional District Alternate Delegate to the Republican National Convention in New York. He attended as one of 30 Native American Delegates.</p>
+            <p>Chief Red Hawk also serves on the Virginia Indian Advisory Board (VIAB) and the Department of Conservation and Recreation (DCR) Board (BCR), as an Appointee by Virginia Governor, the Honorable Glenn Youngkin; to include, serving on the Advisory Committee for the Machicomoco State Park’s 10 year Development Plan.</p>
+            <p>He is a retired US Army Lieutenant Colonel, having served 28 years on active duty. He has held many commands and leadership positions in the United States and Overseas. He has served tours of duty in Germany, Greece, Turkey, Korea, Italy, England and Okinawa Japan. He is also a Vietnam and Desert Storm Era Veteran. He is a life member of the Veterans of Foreign Wars (VFW), the American Legion and Disable Veterans (DAV). Chief Brown also served on the Executive Board for the STOP Program of the Western Tidewater Senior Services Program.</p>
+            <p>His early education began in a one-room “Country School,” (Diamond Grove Elementary School) – partially built with Rosenwald School funds in 1918 and set aside for People of Color, in Southampton County, Virginia (grades 1st to 6th). Chief Brown’s ancestors, the Cheroenhaka (Nottoway) Indians, out of Artis Town, were first to attend in the school year 1918-1919 and their descendants continue to attended until the school was closed in 1957. For the first six years of his early education, Chief Brown had to walk the 1.5 – mile stretch, 3 miles round trip, from his family’s farm to school and back each day.</p>
+            <p>Chief Brown was a senior at Norfolk State University when drafted by the U. S. Army. While on active duty he attended the University of Maryland and the State University of N.Y., earning a Bachelor of Science, B.S., in Social Science in 1976. He also received a Masters of Science Degree in Logistics Management from Florida Institute of Technology in 1983. He is a graduate of the Armed Forces Staff College, Class #81; Command & General Staff College; the Logistics Executive Development Course; the Army’s Race Relations Discussion Leaders Course, the Department of Defense Project Management / Contract Management Course and the Defense Language Institute (DLI), Turkish Language Course, in Monterey CA. Chief Brown has taught Joint Operations at the National Defense University’s Armed Forces Staff College, Norfolk, Virginia, and JROTC in the Wythe County Public School System, having responsibility for three high schools. In 1999 and 2000, He served as Census 2000 Manager for Virginia Congressional District #4, having responsibility for 7 cities and 11 counties and some 1,100 employees.</p>
+            <p>Chief Brown was first elected Chief of the Cheroenhaka (Nottoway) Indian Tribe in 2002. Since 2002, to the current time, through his leadership, the tribe was Virginia State Recognized in 2010 and recently had a Congressional Bill, H.R. 9630, introduce in Congress by the Honorable Jen Kiggans, 2nd Congressional District, to Federal Recognized the Tribe.</p>
+            <p>He has seven children: Caroh “Water Blossom” Holley; Kisha “Red Fern” Brown-Richards; Christopher “Two Wolves” Brown, Lieutenant Colonel Felicia “Moon Flower” Brown, US Army Nurse Corps; Walter David “Spirit Hawk” Brown, IV; Mariah Windsong Brown and Christian Red Eagle Brown. The Cheroenhaka (Nottoway) Indian Tribe of Southampton County Virginia host two Powwows and a Judeo-Christian Revival on its own 263 acres of tribal land annually, at Cattashowrock Town, 27345 Aquia Path in Courtland, Virginia, 23837.</p>
+          </div>
+        </div>
+      );
+    }
+
     if (slug === "ethno-historic-snapshot") {
       const [currentPage, setCurrentPage] = useState(1);
 
@@ -279,6 +307,17 @@ export default function GenericPage({ section, slug }: GenericPageProps) {
       );
     }
 
+    if (slug === "upcoming") {
+      return (
+        <div className="prose prose-lg prose-slate max-w-none">
+          <h2 className="text-secondary">Upcoming Events</h2>
+          <div className="flex justify-center">
+            <img src="/images/powwow-july-2026-791x1024.jpg" alt="37th Green Corn Powwow Flyer" className="rounded-lg shadow-lg max-w-full md:max-w-2xl" />
+          </div>
+        </div>
+      );
+    }
+
     if (slug === "past") {
       return (
         <div className="prose prose-lg prose-slate max-w-none">
@@ -414,6 +453,66 @@ export default function GenericPage({ section, slug }: GenericPageProps) {
           <ul className="list-disc pl-8">
             <li>Hand Site Marker – November</li>
           </ul>
+        </div>
+      );
+    }
+
+    if (slug === "spotswood-treaty-tributes") {
+      return (
+        <div className="prose prose-lg prose-slate max-w-none">
+          <h2 className="text-secondary">Spotswood Treaty Tributes</h2>
+          <ul className="list-disc pl-8 space-y-2">
+            <li><a href="#" className="text-primary hover:underline">312th Spotswood Treaty Tribute April 2025 — Governor’s Photo Gallery</a></li>
+            <li><a href="#" className="text-primary hover:underline">311th Spotswood Treaty Tribute, April 2024 — Governor’s Flickr Album</a></li>
+            <li><a href="#" className="text-primary hover:underline">310th Spotswood Treaty Tribute, April 21, 2023</a></li>
+            <li><a href="#" className="text-primary hover:underline">309th Spotswood Treaty Tribute, April 22, 2022</a></li>
+            <li><a href="#" className="text-primary hover:underline">308th Spotswood Treaty Tribute, April 19, 2021</a></li>
+            <li><a href="#" className="text-primary hover:underline">307th Spotswood Treaty Tribute 2020 (cancelled due to Covid restrictions)</a></li>
+            <li><a href="#" className="text-primary hover:underline">306th Spotswood Treaty Tribute, April 23, 2019</a></li>
+            <li><a href="#" className="text-primary hover:underline">305th Spotswood Treaty Tribute, April 23, 2018</a></li>
+            <li><a href="#" className="text-primary hover:underline">304th Spotswood Treaty Tribute, April 24, 2017</a></li>
+            <li><a href="#" className="text-primary hover:underline">303rd Spotswood Treaty Tribute, April 25, 2016</a></li>
+            <li><a href="#" className="text-primary hover:underline">302nd Spotswood Treaty Tribute, April 27, 2015</a></li>
+            <li><a href="#" className="text-primary hover:underline">301st Spotswood Treaty Tribute, April 23, 2014</a></li>
+            <li><a href="#" className="text-primary hover:underline">300th Spotswood Treaty Tribute, April 23, 2013</a></li>
+            <li><a href="#" className="text-primary hover:underline">299th Spotswood Treaty Tribute, April 23, 2012</a></li>
+          </ul>
+        </div>
+      );
+    }
+
+    if (slug === "tribal-presentations") {
+      return (
+        <div className="prose prose-lg prose-slate max-w-none">
+          <h2 className="text-secondary">Tribal Presentations</h2>
+          <div className="flex flex-col items-center justify-center space-y-4">
+            <h3 className="text-primary">Please Donate</h3>
+            <a href="https://www.paypal.com/donate/?hosted_button_id=S9B8B7X9Q6N24" target="_blank" rel="noopener noreferrer">
+              <img src="/images/paypal-button.png" alt="Donate with PayPal" className="w-48" />
+            </a>
+            <div className="text-center">
+              <p className="font-bold">Or Zelle to:</p>
+              <p>barrettkd20@gmail.com</p>
+              <img src="/images/zelle-qr.png" alt="Zelle QR Code" className="w-48 mx-auto mt-2" />
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    if (slug === "archaeological-society") {
+      return (
+        <div className="prose prose-lg prose-slate max-w-none">
+          <h2 className="text-secondary">Archaeological Society of Virginia (ASV), Nansemond Chapter</h2>
+          <p>ASV has partnered with the Cheroenhaka (Nottoway) Indian Tribe at their Powwows for the past 16 years at Cattashowrock Town</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-8">
+            <img src="/images/asv1-1024x630.jpg" alt="Archaeological Society of Virginia Image 1" className="w-full h-auto rounded-lg shadow-lg" />
+            <img src="/images/asv2-1024x683.jpg" alt="Archaeological Society of Virginia Image 2" className="w-full h-auto rounded-lg shadow-lg" />
+            <div className="flex items-center justify-center">
+              <img src="/images/asv3.png" alt="Archaeological Society of Virginia Image 3" className="max-h-full max-w-full h-auto w-auto object-contain rounded-lg shadow-lg" />
+            </div>
+            <img src="/images/asv4.png" alt="Archaeological Society of Virginia Image 4" className="w-full h-auto rounded-lg shadow-lg" />
+          </div>
         </div>
       );
     }

@@ -39,12 +39,13 @@ const navItems = [
   { name: "Events", path: "/events", subItems: [
     { name: "Upcoming Events", path: "/events/upcoming" },
     { name: "Past Events", path: "/events/past" },
+    { name: "Spotswood Treaty Tributes", path: "/events/spotswood-treaty-tributes" },
     { name: "Presentations", path: "/events/tribal-presentations" },
     { name: "Arch. Society", path: "/events/archaeological-society" },
   ]},
-  { name: "Chief's Bio", path: "/chief-bio" },
   { name: "News", path: "/in-the-news" },
   { name: "Hand Site", path: "/handsite" },
+  { name: "Chief's Bio", path: "/chief-bio" },
   { name: "Links", path: "/links", subItems: [
     { name: "Educational", path: "/links/educational" },
     { name: "Funding", path: "/links/funding" },

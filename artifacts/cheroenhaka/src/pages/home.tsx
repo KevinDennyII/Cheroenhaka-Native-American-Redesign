@@ -59,6 +59,10 @@ export default function Home() {
         </div>
       </section>
 
+      <div className="flex justify-center my-8">
+        <img src="/images/powwow-july-2026-791x1024.jpg" alt="37th Green Corn Powwow Flyer" className="rounded-lg shadow-lg max-w-full md:max-w-2xl" />
+      </div>
+
       {/* Featured Image Section */}
       <section className="bg-primary text-primary-foreground p-8 md:p-12 relative overflow-hidden">
         <div className="absolute inset-0 opacity-20 pointer-events-none">
